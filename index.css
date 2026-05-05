@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BrakeCycle</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="app">
+    <section id="homeScreen" class="screen active">
+      <h1>BrakeCycle</h1>
+      <p class="subtitle">Brake break-in guide for technicians</p>
+
+      <button onclick="selectProcedure('recommended')" class="primary-btn">
+        Recommended Break-In
+      </button>
+
+      <button onclick="selectProcedure('minimum')" class="secondary-btn">
+        Minimum Break-In
+      </button>
+    </section>
+
+    <section id="safetyScreen" class="screen">
+      <h2>Safety First</h2>
+
+      <ul class="safety-list">
+        <li>Do not perform on highways.</li>
+        <li>Use only a parking lot or road with little to no traffic.</li>
+        <li>Follow all traffic laws and shop safety rules.</li>
+        <li>Avoid coming to a complete stop when possible.</li>
+      </ul>
+
+      <button onclick="startProcedure()" class="primary-btn">
+        I Understand, Start
+      </button>
+
+      <button onclick="goHome()" class="text-btn">Back</button>
+    </section>
+
+    <section id="guideScreen" class="screen">
+      <p id="procedureName" class="procedure-name"></p>
+
+      <h2 id="cycleText">Cycle 1 of 20</h2>
+
+      <div class="instruction-box">
+        <p id="instructionText">Press Start</p>
+        <p id="timerText" class="timer">10</p>
+      </div>
+
+      <div class="button-grid">
+        <button onclick="beginStep()" class="primary-btn">Start</button>
+        <button onclick="nextStep()" class="secondary-btn">Next</button>
+        <button onclick="pauseTimer()" class="secondary-btn">Pause</button>
+        <button onclick="resetProcedure()" class="warning-btn">Reset</button>
+      </div>
+
+      <button onclick="completeProcedure()" class="complete-btn">
+        Complete
+      </button>
+    </section>
+
+    <section id="completeScreen" class="screen">
+      <h2>Break-In Completed</h2>
+
+      <p id="completeSummary"></p>
+
+      <button onclick="goHome()" class="primary-btn">
+        Back to Home
+      </button>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
